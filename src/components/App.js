@@ -11,6 +11,7 @@ import ShareOverview from "./ShareOverview";
 import Booking from "./Booking";
 import SingIn from "./SingIn";
 import Admin from "./Admin";
+import Config from "./Config";
 // import "../styles/bootstrap.min.css";
 // import "../styles/app.css";
 
@@ -41,7 +42,7 @@ class App extends Component {
         <Switch>
           <Route path="/singin" component={SingIn} />
           <Route path="/admin" component={Admin} />
-          <Route path="/config" component={Admin} />
+          <Route path="/config" component={Config} />
           <Route exact path="/share" component={requareAuth(ShareOverview)} />
           <Route path="/share/place" component={requareAuth(SharePlace)} />
           <Route path="/book" component={requareAuth(Booking)} />

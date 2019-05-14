@@ -461,3 +461,8 @@ body {
   padding-top: 23px;
   height: 400px;
 }
+
+.kodel-viskas-taip-blogai {
+  height: 100vh;
+  width: 100vw;
+}
