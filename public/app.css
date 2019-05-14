@@ -3,7 +3,7 @@ html {
   position: relative;
 }
 
-.container {
+.container-mobile {
   max-width: 320px;
   min-width: 300px;
   max-height: 700px;
@@ -453,4 +453,11 @@ body {
   padding: 20px;
   font-weight: bold;
   font-size: 20px;
+}
+
+.login-border {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  padding-top: 23px;
+  height: 400px;
 }

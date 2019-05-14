@@ -44,7 +44,7 @@ class Signin extends React.Component {
   render() {
     return (
       <>
-        <div className="container">
+        <div className="container-mobile">
           <div
             data-toggle="modal"
             data-target="#errorModal"

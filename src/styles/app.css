@@ -1,7 +1,7 @@
 html {
   position: relative;
 }
-.container {
+.container-mobile {
   max-width: 320px;
   min-width: 300px;
   max-height: 700px;

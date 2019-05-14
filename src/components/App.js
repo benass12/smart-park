@@ -10,6 +10,7 @@ import SharePlace from "./SharePlace";
 import ShareOverview from "./ShareOverview";
 import Booking from "./Booking";
 import SingIn from "./SingIn";
+import Admin from "./Admin";
 // import "../styles/bootstrap.min.css";
 // import "../styles/app.css";
 
@@ -23,7 +24,12 @@ class App extends Component {
   render() {
     const { auth } = this.props;
 
-    if (!auth && this.props.location.pathname !== "/singin") {
+    if (
+      !auth &&
+      this.props.location.pathname !== "/singin" &&
+      this.props.location.pathname !== "/admin" &&
+      this.props.location.pathname !== "/config"
+    ) {
       this.props.push("/singin");
     }
 
@@ -34,6 +40,8 @@ class App extends Component {
         {/* {auth && <button onClick={() => this.props.signOut()}>Logout </button>} */}
         <Switch>
           <Route path="/singin" component={SingIn} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/config" component={Admin} />
           <Route exact path="/share" component={requareAuth(ShareOverview)} />
           <Route path="/share/place" component={requareAuth(SharePlace)} />
           <Route path="/book" component={requareAuth(Booking)} />
