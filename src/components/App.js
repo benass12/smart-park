@@ -12,6 +12,7 @@ import Booking from "./Booking";
 import SingIn from "./SingIn";
 import Admin from "./Admin";
 import Config from "./Config";
+import AddEdit from "./AddEdit";
 // import "../styles/bootstrap.min.css";
 // import "../styles/app.css";
 
@@ -25,11 +26,17 @@ class App extends Component {
   render() {
     const { auth } = this.props;
 
+    console.log(
+      this.props.location.pathname,
+      this.props.location.pathname.startsWith("/add-edit")
+    );
+
     if (
       !auth &&
       this.props.location.pathname !== "/singin" &&
       this.props.location.pathname !== "/admin" &&
-      this.props.location.pathname !== "/config"
+      this.props.location.pathname !== "/config" &&
+      !this.props.location.pathname.startsWith("/add-edit")
     ) {
       this.props.push("/singin");
     }
@@ -43,6 +50,7 @@ class App extends Component {
           <Route path="/singin" component={SingIn} />
           <Route path="/admin" component={Admin} />
           <Route path="/config" component={Config} />
+          <Route path="/add-edit/:userId?" component={AddEdit} />
           <Route exact path="/share" component={requareAuth(ShareOverview)} />
           <Route path="/share/place" component={requareAuth(SharePlace)} />
           <Route path="/book" component={requareAuth(Booking)} />

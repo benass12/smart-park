@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 import {
   addNewUser,
@@ -48,19 +49,19 @@ class Config extends React.Component {
     const tableRows = _.map(users, (user, userId) => {
       const tableData = userProperties.map(property => {
         const value = user[property];
-        return <td key={value + userId}>{value}</td>;
+        return <td key={value + property + userId}>{value}</td>;
       });
       tableData.push(
-        <td key={"tr-actions" + userId}>
-          <button onClick={this.updateUser.bind(null, userId)}>
+        <td key={"td-actions" + userId}>
+          <Link to={`/add-edit/${userId}`} className="btn btn-primary">
             <i>Update</i>
-          </button>
+          </Link>
           <button onClick={this.deleteUser.bind(null, userId)}>
             <i>Delete</i>
           </button>
         </td>
       );
-      return <tr key={userId}>{tableData}</tr>;
+      return <tr key={"tr" + userId}>{tableData}</tr>;
     });
 
     return (
@@ -96,9 +97,9 @@ class Config extends React.Component {
           <div className="col-md-9">ADMIN PANEL</div>
           <div className="col-md-12">
             {usersTable}
-            <button onClick={this.addUser}>
+            <Link to="/add-edit" className="btn btn-primary">
               <i>Add</i>
-            </button>
+            </Link>
           </div>
         </div>
         {/* Error Modal*/}

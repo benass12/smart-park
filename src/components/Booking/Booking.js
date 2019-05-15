@@ -156,7 +156,7 @@ class Booking extends React.Component {
     }
 
     return (
-      <div className="container">
+      <div className="container-mobile">
         <div className="col-md-12 center menu">
           <div
             // type="button"
@@ -180,7 +180,7 @@ class Booking extends React.Component {
                 onChange={this.handleChange}
               />
             </div>
-            <button type="submit" class="btn btn-add">
+            <button type="button" className="btn btn-add">
               <span className="glyphicon glyphicon-plus" />
             </button>
           </form>
@@ -235,7 +235,7 @@ class Booking extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" className="btn btn-primary">
                   My profile
                 </button>
                 <div className="col-md-12 space" />

@@ -114,7 +114,7 @@ class ShareOverview extends Component {
     }
 
     return (
-      <div className="container">
+      <div className="container-mobile">
         <div className="col-md-12 center menu">
           <div
             // type="button"
