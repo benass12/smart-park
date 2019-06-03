@@ -466,3 +466,25 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.navbar-header .navbar-brand {
+  padding: 5px 15px;
+}
+
+.pannel-btn-circle {
+  position: relative;
+  top: -6px;
+
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0px 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 25px;
+  border-radius: 50%;
+}
+
+th {
+  text-transform: capitalize;
+}

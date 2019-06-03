@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import _ from "lodash";
+import AdminHeader from "../AdminHeader";
 import {
   addNewUser,
   addOrUpdateUserData,
@@ -86,82 +86,85 @@ class AddEdit extends React.Component {
     }
 
     return (
-      <div className="container">
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <h3 className="panel-title">
-              {this.state.editMode ? "UPDATE USER" : "ADD USER"}
-            </h3>
+      <div className="kodel-viskas-taip-blogai">
+        <div className="container">
+          <AdminHeader />
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h3 className="panel-title">
+                {this.state.editMode ? "UPDATE USER" : "ADD USER"}
+              </h3>
+            </div>
+            <div className="panel-body">
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="name"
+                    value={name}
+                    onChange={this.onChange}
+                    placeholder="name"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    value={email}
+                    onChange={this.onChange}
+                    placeholder="email"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password:</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="password"
+                    value={password}
+                    onChange={this.onChange}
+                    placeholder="password"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="placeNumber">Place Number:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="placeNumber"
+                    value={placeNumber}
+                    onChange={this.onChange}
+                    placeholder="place number"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="plateNumber">Plate Number:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="plateNumber"
+                    value={plateNumber}
+                    onChange={this.onChange}
+                    placeholder="plate number"
+                  />
+                </div>
+                <button type="submit" className="btn btn-success">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="panel-body">
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={this.onChange}
-                  placeholder="name"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={this.onChange}
-                  placeholder="email"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="password"
-                  value={password}
-                  onChange={this.onChange}
-                  placeholder="password"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="placeNumber">Place Number:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="placeNumber"
-                  value={placeNumber}
-                  onChange={this.onChange}
-                  placeholder="place number"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="plateNumber">Plate Number:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="plateNumber"
-                  value={plateNumber}
-                  onChange={this.onChange}
-                  placeholder="plate number"
-                />
-              </div>
-              <button type="submit" className="btn btn-success">
-                Submit
-              </button>
-            </form>
-          </div>
+          <Link to="/config" className="btn btn-primary">
+            Back to Users List
+          </Link>
         </div>
-        <Link to="/config" className="btn btn-primary">
-          Back to Users List
-        </Link>
       </div>
     );
   }
